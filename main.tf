@@ -30,11 +30,11 @@ data "aws_vpc" "default" {
 
 resource "aws_security_group" "web" {
   name = "web"
-  descreption = "security group creation "
+  description = "security group creation "
   vpc_id = data.aws_vpc.default
 
   ingress {
-    descreption = " allow http"
+    description = " allow http"
     from_port = 443
     to_port = 443
     protocol = "tcp"
@@ -42,7 +42,7 @@ resource "aws_security_group" "web" {
   }
 
   ingress {
-    descreption = " allow https"
+    description = " allow https"
     from_port = 80
     to_port = 80
     protocol = "tcp"
@@ -50,7 +50,7 @@ resource "aws_security_group" "web" {
   }
 
   egress {
-    descreption = " allow all"
+    description = " allow all"
     from_port = 0
     to_port = 0
     protocol = "-1"
