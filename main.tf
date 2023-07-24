@@ -31,7 +31,7 @@ data "aws_vpc" "default" {
 resource "aws_security_group" "web" {
   name = "web"
   description = "security group creation "
-  vpc_id = data.aws_vpc.default
+  vpc_id = data.aws_vpc.default.id
 
   ingress {
     description = " allow http"
